@@ -1,40 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Title from './Title';
-import Input from './Input';
-import Result from './Result';
+import WithPizzaCalculations from './WithPizzaCalculations'
+import PizzaCalculator from './PizzaCalculator';
+
+const PizzaContainer = WithPizzaCalculations(PizzaCalculator)
 export default class Application extends Component {
-  render () {
-    const { 
-      numberOfPeople, 
-      updateNumPeople, 
-      slicesPerPerson, 
-      updateSlicesPerPerson, 
-      numberOfPizzas, 
-      reset 
-    } = this.props;
-    return (
-      <div className="Application">
-        <Title />
-        <Input
-          label="Number of Guests"
-          type="number"
-          min={0}
-          value={numberOfPeople}
-          onChange={updateNumPeople}
-        />
-        <Input
-          label="Slices Per Person"
-          type="number"
-          min={0}
-          value={slicesPerPerson}
-          onChange={updateSlicesPerPerson}
-        />
-        <Result amount={numberOfPizzas} />
-        <button className="full-width" onClick={reset}>
-          Reset
-        </button>
-      </div>
-    )
+  render() {
+    return <PizzaContainer />
   };
 }

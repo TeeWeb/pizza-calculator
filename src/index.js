@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import AppContainer from './AppContainer';
+import Application from './Application';
 
 import './style.css';
 
-render(<AppContainer />, document.getElementById('root'));
+render(<Application />, document.getElementById('root'));
